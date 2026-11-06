@@ -1,0 +1,26 @@
+npcs:
+  17f15860-6b66-477a-9817-5d6b74e95b8d:
+    name: shop
+    creator: 81c1ffe8-aaaa-32f6-91fa-b8f44814f5d0
+    displayName: shop
+    type: PLAYER
+    location:
+      world: spawn
+      x: 9.964671960419027
+      y: 65.0
+      z: -8.970668692081171
+      yaw: 41.703613
+      pitch: 50.23649
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
