@@ -1,0 +1,270 @@
+# ==============================================================================
+# KSA SMP — Final Exact Layout (Totem in center, Food/Shard right, Nether/End left, Redstone below)
+# ==============================================================================
+
+SETTINGS:
+  DROP-ITEMS-IF-FULL: true
+
+CATEGORIES:
+  MENU-TITLE: '&8Shop Menu'
+  MENU-SIZE: 27
+  ORDER: [END, NETHER, GEAR, FOOD, SHARD, REDSTONE]
+  END:
+    ENABLED: true
+    OPEN-MENU: END
+    SLOT: 11
+    MATERIAL: END_STONE
+    DISPLAY-NAME: '&d&lEnd'
+    LORE: ['&7End materials and travel items']
+  NETHER:
+    ENABLED: true
+    OPEN-MENU: NETHER
+    SLOT: 12
+    MATERIAL: NETHERRACK
+    DISPLAY-NAME: '&5&lNether'
+    LORE: ['&7Blocks, ores, and Nether materials']
+  GEAR:
+    ENABLED: true
+    OPEN-MENU: GEAR
+    SLOT: 13
+    MATERIAL: TOTEM_OF_UNDYING
+    DISPLAY-NAME: '&e&lPvP & Gear'
+    LORE: ['&7Totems, weapons, and combat supplies']
+  FOOD:
+    ENABLED: true
+    OPEN-MENU: FOOD
+    SLOT: 14
+    MATERIAL: COOKED_BEEF
+    DISPLAY-NAME: '&6&lFood'
+    LORE: ['&7Food and survival supplies']
+  SHARD:
+    ENABLED: true
+    OPEN-MENU: SHARD
+    SLOT: 15
+    MATERIAL: AMETHYST_SHARD
+    DISPLAY-NAME: '&d&lShard Shop'
+    LORE: ['&7Spawners and custom tools']
+  REDSTONE:
+    ENABLED: true
+    OPEN-MENU: REDSTONE
+    SLOT: 22
+    MATERIAL: REDSTONE_BLOCK
+    DISPLAY-NAME: '&c&lRedstone & Traps'
+    LORE: ['&7Redstone components, chests & farms']
+
+# ==============================================================================
+# 1. END MENU (3x9 = 27)
+# ==============================================================================
+END:
+  BACK-BUTTON-SLOT: 22
+  BACK-BUTTON:
+    MATERIAL: RED_STAINED_GLASS_PANE
+    DISPLAY-NAME: '&cBack'
+    LORE: ['&7Return to Shop categories']
+  TITLE: '&8Shop &7- &dEnd'
+  SIZE: 27
+  CURRENCY: MONEY
+  ITEMS:
+    ENDER_PEARL: {MATERIAL: ENDER_PEARL, DISPLAY-NAME: '&dEnder Pearl', SLOT: 0, PRICE-PER-UNIT: 75, MAX-QUANTITY: 16}
+    ENDER_EYE: {MATERIAL: ENDER_EYE, DISPLAY-NAME: '&dEye of Ender', SLOT: 1, PRICE-PER-UNIT: 150, MAX-QUANTITY: 16}
+    END_STONE: {MATERIAL: END_STONE, DISPLAY-NAME: '&fEnd Stone', SLOT: 2, PRICE-PER-UNIT: 8, MAX-QUANTITY: 64}
+    END_ROD: {MATERIAL: END_ROD, DISPLAY-NAME: '&fEnd Rod', SLOT: 3, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    CHORUS_FRUIT: {MATERIAL: CHORUS_FRUIT, DISPLAY-NAME: '&dChorus Fruit', SLOT: 4, PRICE-PER-UNIT: 25, MAX-QUANTITY: 64}
+    SHULKER_SHELL: {MATERIAL: SHULKER_SHELL, DISPLAY-NAME: '&dShulker Shell', SLOT: 5, PRICE-PER-UNIT: 350, MAX-QUANTITY: 64}
+    OBSIDIAN: {MATERIAL: OBSIDIAN, DISPLAY-NAME: '&8Obsidian', SLOT: 6, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    ENDER_CHEST: {MATERIAL: ENDER_CHEST, DISPLAY-NAME: '&5Ender Chest', SLOT: 7, PRICE-PER-UNIT: 2500, MAX-QUANTITY: 1, HIDE-QUANTITY-BUTTONS: true}
+    SHULKER_BOX: {MATERIAL: SHULKER_BOX, DISPLAY-NAME: '&5Shulker Box', SLOT: 8, PRICE-PER-UNIT: 800, MAX-QUANTITY: 1, HIDE-QUANTITY-BUTTONS: true}
+
+# ==============================================================================
+# 2. NETHER MENU (6x9 = 54)
+# ==============================================================================
+NETHER:
+  BACK-BUTTON-SLOT: 45
+  BACK-BUTTON:
+    MATERIAL: RED_STAINED_GLASS_PANE
+    DISPLAY-NAME: '&cBack'
+    LORE: ['&7Return to Shop categories']
+  TITLE: '&8Shop &7- &5Nether'
+  SIZE: 54
+  CURRENCY: MONEY
+  ITEMS:
+    BLAZE_ROD: {MATERIAL: BLAZE_ROD, DISPLAY-NAME: '&6Blaze Rod', SLOT: 0, PRICE-PER-UNIT: 150, MAX-QUANTITY: 64}
+    NETHER_WART: {MATERIAL: NETHER_WART, DISPLAY-NAME: '&cNether Wart', SLOT: 1, PRICE-PER-UNIT: 25, MAX-QUANTITY: 64}
+    GLOWSTONE_DUST: {MATERIAL: GLOWSTONE_DUST, DISPLAY-NAME: '&eGlowstone Dust', SLOT: 2, PRICE-PER-UNIT: 15, MAX-QUANTITY: 64}
+    MAGMA_CREAM: {MATERIAL: MAGMA_CREAM, DISPLAY-NAME: '&6Magma Cream', SLOT: 3, PRICE-PER-UNIT: 25, MAX-QUANTITY: 64}
+    GHAST_TEAR: {MATERIAL: GHAST_TEAR, DISPLAY-NAME: '&fGhast Tear', SLOT: 4, PRICE-PER-UNIT: 350, MAX-QUANTITY: 64}
+    QUARTZ: {MATERIAL: QUARTZ, DISPLAY-NAME: '&fNether Quartz', SLOT: 5, PRICE-PER-UNIT: 15, MAX-QUANTITY: 64}
+    SOUL_SAND: {MATERIAL: SOUL_SAND, DISPLAY-NAME: '&8Soul Sand', SLOT: 6, PRICE-PER-UNIT: 50, MAX-QUANTITY: 64}
+    MAGMA_BLOCK: {MATERIAL: MAGMA_BLOCK, DISPLAY-NAME: '&6Magma Block', SLOT: 7, PRICE-PER-UNIT: 35, MAX-QUANTITY: 64}
+    CRYING_OBSIDIAN: {MATERIAL: CRYING_OBSIDIAN, DISPLAY-NAME: '&5Crying Obsidian', SLOT: 8, PRICE-PER-UNIT: 150, MAX-QUANTITY: 64}
+
+# ==============================================================================
+# 3. GEAR & PVP MENU (6x9 = 54)
+# ==============================================================================
+GEAR:
+  BACK-BUTTON-SLOT: 45
+  BACK-BUTTON:
+    MATERIAL: RED_STAINED_GLASS_PANE
+    DISPLAY-NAME: '&cBack'
+    LORE: ['&7Return to Shop categories']
+  TITLE: '&8Shop &7- &ePvP & Gear'
+  SIZE: 54
+  CURRENCY: MONEY
+  ITEMS:
+    OBSIDIAN: {MATERIAL: OBSIDIAN, DISPLAY-NAME: '&8Obsidian', SLOT: 0, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    END_CRYSTAL: {MATERIAL: END_CRYSTAL, DISPLAY-NAME: '&bEnd Crystal', SLOT: 1, PRICE-PER-UNIT: 350, MAX-QUANTITY: 64}
+    RESPAWN_ANCHOR: {MATERIAL: RESPAWN_ANCHOR, DISPLAY-NAME: '&5Respawn Anchor', SLOT: 2, PRICE-PER-UNIT: 1000, MAX-QUANTITY: 64}
+    GLOWSTONE: {MATERIAL: GLOWSTONE, DISPLAY-NAME: '&eGlowstone', SLOT: 3, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    TOTEM_OF_UNDYING: {MATERIAL: TOTEM_OF_UNDYING, DISPLAY-NAME: '&eTotem of Undying', SLOT: 4, PRICE-PER-UNIT: 1250, MAX-QUANTITY: 1, HIDE-QUANTITY-BUTTONS: true}
+    ENDER_PEARL: {MATERIAL: ENDER_PEARL, DISPLAY-NAME: '&dEnder Pearl', SLOT: 5, PRICE-PER-UNIT: 75, MAX-QUANTITY: 16}
+    GOLDEN_APPLE: {MATERIAL: GOLDEN_APPLE, DISPLAY-NAME: '&6Golden Apple', SLOT: 6, PRICE-PER-UNIT: 250, MAX-QUANTITY: 64}
+    EXPERIENCE_BOTTLE: {MATERIAL: EXPERIENCE_BOTTLE, DISPLAY-NAME: '&eBottle o Enchanting', SLOT: 7, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+
+# ==============================================================================
+# 4. REDSTONE & TRAPS MENU (6x9 = 54)
+# ==============================================================================
+REDSTONE:
+  BACK-BUTTON-SLOT: 45
+  BACK-BUTTON:
+    MATERIAL: RED_STAINED_GLASS_PANE
+    DISPLAY-NAME: '&cBack'
+    LORE: ['&7Return to Shop categories']
+  TITLE: '&8Shop &7- &cRedstone & Traps'
+  SIZE: 54
+  CURRENCY: MONEY
+  ITEMS:
+    REDSTONE: {MATERIAL: REDSTONE, DISPLAY-NAME: '&cRedstone Dust', SLOT: 0, PRICE-PER-UNIT: 50, MAX-QUANTITY: 64}
+    REDSTONE_BLOCK: {MATERIAL: REDSTONE_BLOCK, DISPLAY-NAME: '&cRedstone Block', SLOT: 1, PRICE-PER-UNIT: 450, MAX-QUANTITY: 64}
+    REDSTONE_TORCH: {MATERIAL: REDSTONE_TORCH, DISPLAY-NAME: '&cRedstone Torch', SLOT: 2, PRICE-PER-UNIT: 52, MAX-QUANTITY: 64}
+    REDSTONE_LAMP: {MATERIAL: REDSTONE_LAMP, DISPLAY-NAME: '&eRedstone Lamp', SLOT: 3, PRICE-PER-UNIT: 30, MAX-QUANTITY: 64}
+    REPEATER: {MATERIAL: REPEATER, DISPLAY-NAME: '&cRepeater', SLOT: 4, PRICE-PER-UNIT: 25, MAX-QUANTITY: 64}
+    COMPARATOR: {MATERIAL: COMPARATOR, DISPLAY-NAME: '&cComparator', SLOT: 5, PRICE-PER-UNIT: 25, MAX-QUANTITY: 64}
+    PISTON: {MATERIAL: PISTON, DISPLAY-NAME: '&fPiston', SLOT: 6, PRICE-PER-UNIT: 40, MAX-QUANTITY: 64}
+    STICKY_PISTON: {MATERIAL: STICKY_PISTON, DISPLAY-NAME: '&aSticky Piston', SLOT: 7, PRICE-PER-UNIT: 60, MAX-QUANTITY: 64}
+    OBSERVER: {MATERIAL: OBSERVER, DISPLAY-NAME: '&fObserver', SLOT: 8, PRICE-PER-UNIT: 60, MAX-QUANTITY: 64}
+    HOPPER: {MATERIAL: HOPPER, DISPLAY-NAME: '&fHopper', SLOT: 9, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    DISPENSER: {MATERIAL: DISPENSER, DISPLAY-NAME: '&fDispenser', SLOT: 10, PRICE-PER-UNIT: 70, MAX-QUANTITY: 64}
+    DROPPER: {MATERIAL: DROPPER, DISPLAY-NAME: '&fDropper', SLOT: 11, PRICE-PER-UNIT: 50, MAX-QUANTITY: 64}
+    CHEST: {MATERIAL: CHEST, DISPLAY-NAME: '&6Chest', SLOT: 12, PRICE-PER-UNIT: 20, MAX-QUANTITY: 64}
+    TRAPPED_CHEST: {MATERIAL: TRAPPED_CHEST, DISPLAY-NAME: '&cTrapped Chest', SLOT: 13, PRICE-PER-UNIT: 30, MAX-QUANTITY: 64}
+    BARREL: {MATERIAL: BARREL, DISPLAY-NAME: '&6Barrel', SLOT: 14, PRICE-PER-UNIT: 25, MAX-QUANTITY: 64}
+    MINECART: {MATERIAL: MINECART, DISPLAY-NAME: '&7Minecart', SLOT: 15, PRICE-PER-UNIT: 50, MAX-QUANTITY: 64}
+    HOPPER_MINECART: {MATERIAL: HOPPER_MINECART, DISPLAY-NAME: '&8Minecart with Hopper', SLOT: 16, PRICE-PER-UNIT: 150, MAX-QUANTITY: 64}
+    CHEST_MINECART: {MATERIAL: CHEST_MINECART, DISPLAY-NAME: '&6Minecart with Chest', SLOT: 17, PRICE-PER-UNIT: 80, MAX-QUANTITY: 64}
+    TNT_MINECART: {MATERIAL: TNT_MINECART, DISPLAY-NAME: '&cMinecart with TNT', SLOT: 18, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    RAIL: {MATERIAL: RAIL, DISPLAY-NAME: '&7Rail', SLOT: 19, PRICE-PER-UNIT: 15, MAX-QUANTITY: 64}
+    POWERED_RAIL: {MATERIAL: POWERED_RAIL, DISPLAY-NAME: '&6Powered Rail', SLOT: 20, PRICE-PER-UNIT: 150, MAX-QUANTITY: 64}
+    ACTIVATOR_RAIL: {MATERIAL: ACTIVATOR_RAIL, DISPLAY-NAME: '&cActivator Rail', SLOT: 21, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    DETECTOR_RAIL: {MATERIAL: DETECTOR_RAIL, DISPLAY-NAME: '&7Detector Rail', SLOT: 22, PRICE-PER-UNIT: 100, MAX-QUANTITY: 64}
+    TARGET: {MATERIAL: TARGET, DISPLAY-NAME: '&cTarget', SLOT: 23, PRICE-PER-UNIT: 80, MAX-QUANTITY: 64}
+    LIGHTNING_ROD: {MATERIAL: LIGHTNING_ROD, DISPLAY-NAME: '&6Lightning Rod', SLOT: 24, PRICE-PER-UNIT: 40, MAX-QUANTITY: 64}
+    SCULK_SENSOR: {MATERIAL: SCULK_SENSOR, DISPLAY-NAME: '&3Sculk Sensor', SLOT: 25, PRICE-PER-UNIT: 200, MAX-QUANTITY: 64}
+    SCULK_CATALYST: {MATERIAL: SCULK_CATALYST, DISPLAY-NAME: '&3Sculk Catalyst', SLOT: 26, PRICE-PER-UNIT: 500, MAX-QUANTITY: 64}
+    DAYLIGHT_DETECTOR: {MATERIAL: DAYLIGHT_DETECTOR, DISPLAY-NAME: '&6Daylight Detector', SLOT: 27, PRICE-PER-UNIT: 90, MAX-QUANTITY: 64}
+    TRIPWIRE_HOOK: {MATERIAL: TRIPWIRE_HOOK, DISPLAY-NAME: '&fTripwire Hook', SLOT: 28, PRICE-PER-UNIT: 20, MAX-QUANTITY: 64}
+    STRING: {MATERIAL: STRING, DISPLAY-NAME: '&fString', SLOT: 29, PRICE-PER-UNIT: 15, MAX-QUANTITY: 64}
+    OAK_PRESSURE_PLATE: {MATERIAL: OAK_PRESSURE_PLATE, DISPLAY-NAME: '&6Wooden Pressure Plate', SLOT: 30, PRICE-PER-UNIT: 15, MAX-QUANTITY: 64}
+    STONE_PRESSURE_PLATE: {MATERIAL: STONE_PRESSURE_PLATE, DISPLAY-NAME: '&7Stone Pressure Plate', SLOT: 31, PRICE-PER-UNIT: 20, MAX-QUANTITY: 64}
+    LEVER: {MATERIAL: LEVER, DISPLAY-NAME: '&7Lever', SLOT: 32, PRICE-PER-UNIT: 15, MAX-QUANTITY: 64}
+    TNT: {MATERIAL: TNT, DISPLAY-NAME: '&cTNT', SLOT: 33, PRICE-PER-UNIT: 200, MAX-QUANTITY: 64}
+
+# Configuration section for Shop Web Analytics Server
+SHOP-GUI:
+  SHOW-AUCTION-PRICE: true
+  # Configuration section for Item.
+  ITEM:
+    # Configuration section for Lore.
+    LORE:
+    - '&7Shop price: {shop_price}'
+    - '{auction_line}'
+    - ''
+    - '{favorite_line}'
+    - '&eLeft-click to buy from the shop'
+    - '{auction_action}'
+    - '{favorite_action}'
+  FAVORITES:
+    ENABLED: true
+  WEB-SERVER:
+    # Set to true to enable the embedded Shop Analytics web server
+    ENABLED: false
+    # Port for the embedded web server (e.g. 8080 or 25580)
+    PORT: 8080
+    # Optional custom domain or public URL (e.g. "https://stats.ultimatedonutsmp2mc.net" or "http://192.168.1.15:8080/stats")
+    # If left empty (""), it automatically resolves to http://localhost:<PORT>/stats
+    PUBLIC-URL: ""
+
+# ==============================================================================
+# 5. FOOD MENU (6x9 = 54)
+# ==============================================================================
+FOOD:
+  BACK-BUTTON-SLOT: 45
+  BACK-BUTTON:
+    MATERIAL: RED_STAINED_GLASS_PANE
+    DISPLAY-NAME: '&cBack'
+    LORE: ['&7Return to Shop categories']
+  TITLE: '&8Shop &7- &6Food'
+  SIZE: 54
+  CURRENCY: MONEY
+  ITEMS:
+    POTATO: {MATERIAL: POTATO, DISPLAY-NAME: '&ePotato', SLOT: 0, PRICE-PER-UNIT: 75, MAX-QUANTITY: 64}
+    SWEET_BERRIES: {MATERIAL: SWEET_BERRIES, DISPLAY-NAME: '&cSweet Berries', SLOT: 1, PRICE-PER-UNIT: 50, MAX-QUANTITY: 64}
+    MELON_SLICE: {MATERIAL: MELON_SLICE, DISPLAY-NAME: '&aMelon Slice', SLOT: 2, PRICE-PER-UNIT: 10, MAX-QUANTITY: 64}
+    CARROT: {MATERIAL: CARROT, DISPLAY-NAME: '&6Carrot', SLOT: 3, PRICE-PER-UNIT: 65, MAX-QUANTITY: 64}
+    APPLE: {MATERIAL: APPLE, DISPLAY-NAME: '&cApple', SLOT: 4, PRICE-PER-UNIT: 25, MAX-QUANTITY: 64}
+    COOKED_CHICKEN: {MATERIAL: COOKED_CHICKEN, DISPLAY-NAME: '&6Cooked Chicken', SLOT: 5, PRICE-PER-UNIT: 30, MAX-QUANTITY: 64}
+    COOKED_BEEF: {MATERIAL: COOKED_BEEF, DISPLAY-NAME: '&6Steak', SLOT: 6, PRICE-PER-UNIT: 35, MAX-QUANTITY: 64}
+    GOLDEN_CARROT: {MATERIAL: GOLDEN_CARROT, DISPLAY-NAME: '&6Golden Carrot', SLOT: 7, PRICE-PER-UNIT: 50, MAX-QUANTITY: 64}
+    GOLDEN_APPLE: {MATERIAL: GOLDEN_APPLE, DISPLAY-NAME: '&bGolden Apple', SLOT: 8, PRICE-PER-UNIT: 250, MAX-QUANTITY: 64}
+
+# ==============================================================================
+# 6. SHARD SHOP MENU (6x9 = 54)
+# ==============================================================================
+SHARD:
+  BACK-BUTTON-SLOT: 45
+  BACK-BUTTON:
+    MATERIAL: Red_Stained_Glass_Pane
+    DISPLAY-NAME: '&cBack'
+    LORE: ['&7Return to Shop categories']
+  TITLE: '&8Shop &7- &dShard Shop'
+  SIZE: 54
+  CURRENCY: SHARD
+  ITEMS:
+    PIG_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dPig Spawner', SLOT: 0, PRICE-PER-UNIT: 250, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} pig {amount}', GIVE-ITEM: false}
+    COW_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dCow Spawner', SLOT: 1, PRICE-PER-UNIT: 350, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} cow {amount}', GIVE-ITEM: false}
+    ZOMBIE_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dZombie Spawner', SLOT: 2, PRICE-PER-UNIT: 400, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} zombie {amount}', GIVE-ITEM: false}
+    SPIDER_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dSpider Spawner', SLOT: 3, PRICE-PER-UNIT: 750, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} spider {amount}', GIVE-ITEM: false}
+    SKELETON_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dSkeleton Spawner', SLOT: 4, PRICE-PER-UNIT: 500, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} skeleton {amount}', GIVE-ITEM: false}
+    CREEPER_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dCreeper Spawner', SLOT: 5, PRICE-PER-UNIT: 625, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} creeper {amount}', GIVE-ITEM: false}
+    ZOMBIFIED_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dZombified Piglin Spawner', SLOT: 6, PRICE-PER-UNIT: 750, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} piglin {amount}', GIVE-ITEM: false}
+    BLAZE_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dBlaze Spawner', SLOT: 7, PRICE-PER-UNIT: 1000, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} blaze {amount}', GIVE-ITEM: false}
+    GOLEM_SPAWNER: {MATERIAL: SPAWNER, DISPLAY-NAME: '&dIron Golem Spawner', SLOT: 8, PRICE-PER-UNIT: 1500, MAX-QUANTITY: 1, COMMAND: 'spawner give {username} iron_golem {amount}', GIVE-ITEM: false}
+    # WORTH (default) still prices items that are not listed under FIXED-ITEMS from worth.yml.
+    # AUCTION-ONLY leaves those items out of stock until a matching auction listing exists.
+    # A material under FIXED-ITEMS sells at that price per item even when the auction house is empty.
+    # A cheaper auction listing still wins. A more expensive listing is ignored.
+    # Enchantment worth from worth.yml is added on top, so a sharpness sword costs more than the plain sword.
+    # ENCHANTED_BOOK is the exception. That one price covers every enchant and level, including a book
+    # with more than one enchant. Worth.yml is not added.
+    # A line such as ENCHANTED_BOOK:SHARPNESS:3 overrides just that book.
+    # Names are Bukkit materials. Quote a namespaced id, for example "minecraft:stick".
+    UNLISTED: WORTH
+    # WORTH (default) still prices items that are not listed under FIXED-ITEMS from worth.yml.
+    # AUCTION-ONLY leaves those items out of stock until a matching auction listing exists.
+    # A material under FIXED-ITEMS sells at that price per item even when the auction house is empty.
+    # A cheaper auction listing still wins. A more expensive listing is ignored.
+    # Enchantment worth from worth.yml is added on top, so a sharpness sword costs more than the plain sword.
+    # ENCHANTED_BOOK is the exception. That one price covers every enchant and level, including a book
+    # with more than one enchant. Worth.yml is not added.
+    # A line such as ENCHANTED_BOOK:SHARPNESS:3 overrides just that book.
+    # Names are Bukkit materials. Quote a namespaced id, for example "minecraft:stick".
+    UNLISTED: WORTH
+    # WORTH (default) still prices items that are not listed under FIXED-ITEMS from worth.yml.
+    # AUCTION-ONLY leaves those items out of stock until a matching auction listing exists.
+    # A material under FIXED-ITEMS sells at that price per item even when the auction house is empty.
+    # A cheaper auction listing still wins. A more expensive listing is ignored.
+    # Enchantment worth from worth.yml is added on top, so a sharpness sword costs more than the plain sword.
+    # ENCHANTED_BOOK is the exception. That one price covers every enchant and level, including a book
+    # with more than one enchant. Worth.yml is not added.
+    # A line such as ENCHANTED_BOOK:SHARPNESS:3 overrides just that book.
+    # Names are Bukkit materials. Quote a namespaced id, for example "minecraft:stick".
+    UNLISTED: WORTH
