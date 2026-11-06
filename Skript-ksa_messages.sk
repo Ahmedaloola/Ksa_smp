@@ -1,0 +1,11 @@
+options:
+    ksa-prefix: &8[&2KSA &f›&8]
+
+on join:
+    set join message to "{@ksa-prefix} &a%player% &7دخل السيرفر."
+
+on quit:
+    set quit message to "{@ksa-prefix} &c%player% &7غادر السيرفر."
+
+on chat:
+    set message format to "{@ksa-prefix} &f%player% &7» &f%message%"
