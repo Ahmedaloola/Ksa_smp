@@ -1,13 +1,256 @@
-#
-# WorldGuard's world configuration file
-#
-# This is a world configuration file. Anything placed into here will only
-# affect this world. If you don't put anything in this file, then the
-# settings will be inherited from the main configuration file.
-#
-# If you see {} below, that means that there are NO entries in this file.
-# Remove the {} and add your own entries.
-#
+# Radius of chunks to preload around each player
+chunk-loading-radius: 3
 
-regions:
-    titles-always-use-default-times: true
+# Maximum chunks to load per server tick
+max-chunks-to-load: 5
+
+# Maximum chunk entries tracked in the cache. Entries are coordinates only,
+# so this is cheap to raise on busy servers
+max-cache-size: 2048
+
+# Time (ms) before cached chunks expire
+cache-expiration-time: 30000
+
+# ─── Performance Options ──────────────────
+
+# Dynamic radius: auto-adjust based on server performance
+dynamic-radius:
+  enabled: true
+  high-tick-threshold: 50
+  high-memory-threshold: 75
+  low-tick-threshold: 40
+  low-memory-threshold: 60
+
+# Maintenance mode: protect server performance
+maintenance:
+  enabled: false
+  radius: 2
+  tick-time-threshold: 70.0
+  memory-threshold: 80.0
+  auto-maintenance: true
+
+# ─── Advanced Features ──────────────────────
+
+# Cap on how many chunks may be loading in the background at once.
+# Higher lets players outrun loading less, lower is gentler on disk and CPU
+chunk-processor:
+  max-in-flight: 64
+
+# Smart unloading configuration
+smart-unloading:
+  enabled: true
+  heat-decay-rate: 0.95
+  heat-decay-interval: 5000
+  cold-threshold: 1.0
+  min-chunk-age: 30000
+  visit-heat-increase: 10.0
+  proximity-heat-bonus: 5.0
+  safety-radius: 3
+  # Write the heat map to disk periodically so a crash doesn't lose it
+  autosave: true
+  autosave-interval: 600
+
+# Memory management
+memory:
+  gc-min-interval: 30000
+  low-threshold: 0.85
+  critical-threshold: 0.95
+
+# GUI settings
+gui:
+  enabled: true
+  update-interval: 20
+  cooldown: 300
+  # Use the new dialog screens on 1.21.6+ for /cm. Bedrock and older
+  # clients still get the chest menu, /cm menu always opens it
+  dialogs: true
+
+# Performance monitoring
+performance:
+  alert-on-critical: true
+  export-metrics: false
+  metrics-interval: 300
+
+# ─── Advanced Features ──────────────────────
+
+# Enable advanced optimization features
+advanced-features:
+  enabled: true
+  
+  chunk-analyzer:
+    cache-expiration: 300000
+    complexity-threshold: 100
+  
+  region-optimizer:
+    region-size: 8
+    activity-decay-rate: 0.9
+    high-activity-threshold: 100
+  
+  prefetcher:
+    enabled: true
+    max-distance: 5
+    confidence-threshold: 0.7
+
+# ─── Permission Radius ─────────────────────
+# Grant players different radius based on permissions
+permission-radius:
+  enabled: false
+  tiers:
+    '6': 6
+    '5': 5
+    '4': 4
+    '3': 3
+    '2': 2
+    '1': 1
+
+# ─── Scheduled Optimization ───────────────
+# Run chunk optimization at specific times
+scheduled-optimization:
+  enabled: false
+  times:
+  - 04:00
+  aggressive-target: 100
+  log-results: true
+
+# ─── WorldGuard Integration ───────────────
+# Keep WorldGuard region chunks loaded
+worldguard:
+  keep-regions-loaded: false
+  check-on-unload: true
+  region-whitelist: []
+  scan-interval: 300
+
+# ─── Chunk Pre-Generation ────────────────────
+# Pre-generate chunks with TPS-aware throttling
+pre-generation:
+  chunks-per-tick: 3
+  tps-threshold: 18.0
+  actionbar-updates: true
+  # Release each chunk once it is written, so pre-gen doesn't fill the heap
+  unload-after-generate: true
+  # Skip chunks that already exist on disk instead of loading them again
+  skip-generated: true
+
+# ─── Respect Pre-Loaded Chunks ───────────────
+# Leave chunks alone when another plugin or the server is keeping them
+# loaded on purpose. Works with Chunky, WorldBorder, vanilla /forceload,
+# spawn chunks and redstone chunk-loaders so their work is not undone
+preloaded-chunks:
+  # Never unload chunks marked as force-loaded
+  respect-force-loaded: true
+  # Never unload chunks another plugin is holding with a chunk ticket
+  respect-plugin-tickets: true
+  # While a pre-generator is running in a world, pause unloading there
+  pause-unload-during-pregen: true
+  # Seconds of quiet before a world is considered done generating
+  pregen-detect-seconds: 5
+  # New chunks away from players in that window to count as an active pre-gen
+  pregen-chunk-threshold: 12
+
+# ─── System Options ─────────────────────────
+
+# Logging level (SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST)
+logging-level: INFO
+
+# Plugin language (en, es, fr, de, pt, it, ru, ja, ko, zh, ar)
+language: en
+
+# Whether to broadcast maintenance mode changes to all players
+broadcast-maintenance-changes: false
+
+# --- Entity Limiter ---
+entity-limiter:
+  enabled: false
+  total-limit: 100
+  hostile-limit: 30
+  passive-limit: 40
+  item-limit: 50
+  cull-cooldown: 5000
+  # Ticks between sweeps of the heaviest loaded chunks
+  sweep-interval: 200
+  # Never culled. Named, tamed, leashed, persistent mobs and villagers are
+  # always kept on top of this list
+  protected-types:
+  - ITEM_FRAME
+  - GLOW_ITEM_FRAME
+  - PAINTING
+  - MINECART_CHEST
+  - MINECART_HOPPER
+  # Dropped items of these materials are never culled
+  protected-items: []
+
+# --- AFK Saver ---
+# Players who stay still for a while get a smaller preload radius.
+# view-distance lowers their actual view distance too (Paper/Folia only,
+# 0 keeps the server value). Restored the moment they move or interact.
+# Players with chunkmanager.bypass are never marked AFK
+afk:
+  enabled: true
+  idle-seconds: 300
+  radius: 1
+  view-distance: 0
+
+# --- Spawn Chunks ---
+# Radius of chunks kept loaded around each world spawn (1.20.5+).
+# 0 frees them entirely, -1 leaves the server setting alone
+spawn-chunks:
+  radius: -1
+
+# --- TPS Throttling ---
+tps-throttle:
+  enabled: true
+  min-tps: 15.0
+  target-tps: 19.0
+
+# --- Load Priority Queue ---
+load-priority:
+  enabled: true
+
+# --- Chunk Tickets ---
+chunk-tickets:
+  enabled: false
+  default-duration: 300
+
+# --- Teleport Preloading ---
+teleport-preload:
+  enabled: true
+  radius: 3
+
+# --- Portal Preloading ---
+portal-preload:
+  enabled: true
+  radius: 4
+
+# --- Adaptive Player Loading ---
+adaptive-loading:
+  enabled: false
+  ping-threshold-low: 50
+  ping-threshold-med: 150
+  ping-threshold-high: 300
+
+# --- GeyserMC ---
+geyser:
+  auto-detect: true
+  radius-reduction: 2
+
+# --- Chunk Cost Tracking ---
+chunk-cost:
+  enabled: true
+  update-interval: 100
+  # Chunks scanned per pass. The scan resumes where it left off, so this
+  # caps the per-tick cost on worlds with many loaded chunks
+  chunks-per-pass: 250
+
+# --- Per-Region Tick Monitor (Folia only, idle elsewhere) ---
+region-tick-monitor:
+  enabled: true
+  update-interval: 20
+
+# --- Hot-Chunk Map Overlay (Dynmap / BlueMap) ---
+map-overlay:
+  enabled: true
+  top-count: 20
+  refresh-interval: 600
+
+# Worlds to exclude from chunk management
+world-blacklist: []

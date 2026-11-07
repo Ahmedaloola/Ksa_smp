@@ -1,0 +1,6 @@
+command /ksainfo:
+    permission: ksa.staff
+    permission message: &cليس لديك صلاحية.
+    trigger:
+        send "&2KSA &f› &7الخادم يعمل بإعدادات KSA SMP."
+        send "&7راجع /docs/INSTALL_AR.md قبل تطبيق أي تغيير."
